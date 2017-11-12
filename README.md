@@ -51,6 +51,7 @@ Don't inject child theme code when using the editor.
 ```
 npm run dev:include-editor -d "buildDestinationPath"
 ```
+[![Styles editor](/docs/img/styles-editor.png?raw=true)](https://www.youtube.com/watch?v=1GuId-Jf6T0)
 
 ## Included child themes:
 
