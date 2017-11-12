@@ -4,7 +4,7 @@
 # Gimi Theme
 
 **If you want to just use the theme - grab files from the release folder
-and proceed with the documentation: https://mariangibala.github.io/gimi-theme-ghost/**
+and proceed with the [documentation](https://mariangibala.github.io/gimi-theme-ghost/).**
 
 Clean and customizable blog theme for Ghost v1.X.X
 
@@ -51,7 +51,12 @@ Don't inject child theme code when using the editor.
 ```
 npm run dev:include-editor -d "buildDestinationPath"
 ```
+[![Styles editor](/docs/img/styles-editor.png?raw=true)](https://www.youtube.com/watch?v=1GuId-Jf6T0)
 
 ## Included child themes:
 
 ![Child Themes](/docs/img/child-themes.png?raw=true)
+
+## License
+
+MIT
