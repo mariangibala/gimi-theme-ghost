@@ -1,11 +1,39 @@
 
+![Gimi Theme](/docs/img/main.jpg?raw=true)
+
 # Gimi Theme
 
-If you want to just use the theme - grab files from the release folder
-and proceed with the documentation: https://mariangibala.github.io/gimi-theme-ghost/
+**If you want to just use the theme - grab files from the release folder
+and proceed with the documentation: https://mariangibala.github.io/gimi-theme-ghost/**
+
+Clean and customizable blog theme for Ghost v1.X.X
+
+* Lightweight
+* Fully Responsive
+* Featured Post
+* Disqus Comments
+* Share Posts on Facebook, Twitter and Google+
+* Next & Previous Post Navigation
+* Iframes Support – Vimeo, YouTube, SoundCloud
+* Valid W3C HTML5
+* Font Awesome Icons
+
+#### Widgets:
+
+* Recent Posts
+* Popular Tags
+* Subscription Form
+
+#### 3rd party assets:
+
+* Font Awesome 4.7.0
+* Google Fonts
+* jQuery 3.2.0
+* Photos used in theme previews and the editor are licensed under Creative Commons Zero (unsplash.com)
+* Vectors are created by Freepik.
 
 
-#### Scripts:
+## Scripts:
 
 ```
 npm run dev -d "buildDestinationPath"
@@ -23,3 +51,5 @@ Don't inject child theme code when using the editor.
 ```
 npm run dev:include-editor -d "buildDestinationPath"
 ```
+
+![Gimi Theme](/docs/img/child-themes.png?raw=true)
