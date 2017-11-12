@@ -43,7 +43,7 @@ For DEV build setup `"buildDestinationPath"` to point to Ghost themes folder.
 If Ghost instance is already running you may need to use `ghost restart` command to see the theme in available themes list.
 
 
-#### Styles editor
+## Styles editor
 Styles editor source files are not included in this repository.
 But the editor build is included and you can still run your own local copy of it.
 
@@ -52,4 +52,6 @@ Don't inject child theme code when using the editor.
 npm run dev:include-editor -d "buildDestinationPath"
 ```
 
-![Gimi Theme](/docs/img/child-themes.png?raw=true)
+## Included child themes:
+
+![Child Themes](/docs/img/child-themes.png?raw=true)
