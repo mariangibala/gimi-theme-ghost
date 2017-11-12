@@ -3,6 +3,12 @@
 
 # Gimi Theme
 
+Theme Preview: http://gimi.themesghost.com/
+
+Styles Editor Online: http://gimi-editor.themesghost.com/
+
+
+
 **If you want to just use the theme - grab files from the release folder
 and proceed with the [documentation](https://mariangibala.github.io/gimi-theme-ghost/).**
 
@@ -47,7 +53,8 @@ If Ghost instance is already running you may need to use `ghost restart` command
 Styles editor source files are not included in this repository.
 But the editor build is included and you can still run your own local copy of it.
 
-Don't inject child theme code when using the editor.
+* Don't inject child theme code when using the editor. When editor is active child theme code is generated on runtime. 
+* Editor uses CSS selectors to identify elements ![(see here)](https://github.com/mariangibala/gimi-theme-ghost/blob/master/src/js/editor/config.js#L65) so be cerful with changing .scss 
 ```
 npm run dev:include-editor -d "buildDestinationPath"
 ```
