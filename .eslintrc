@@ -1,0 +1,53 @@
+{
+  "rules": {
+    "no-unused-vars": [
+      1
+    ],
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "quotes": [
+      2,
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ],
+    "linebreak-style": [
+      0,
+      "windows"
+    ],
+    "semi": [
+      0
+    ],
+    "no-console": 0
+  },
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jquery": true,
+    "mocha": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": [
+  ],
+  "globals": {
+    "expect": true,
+    "assert": true,
+    "chai": true,
+    "_DEV_": true,
+    "_DEBUG_": true,
+    "_INCLUDE_EDITOR_": true
+  }
+}

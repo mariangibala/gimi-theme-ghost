@@ -1,0 +1,19 @@
+{{!-- Pagination for posts --}}
+
+<div id="pagination-wrapper">
+    <nav id="pagination">
+
+        {{#if prev}}
+            <a class="btn-icon btn-pagination" href="{{page_url prev}}">
+                <i class="fa fa-angle-left" aria-hidden="true"></i> Newer posts
+            </a>
+        {{/if}}
+
+
+        {{#if next}}
+            <a class="btn-icon btn-pagination" href="{{page_url next}}">
+                Older posts <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        {{/if}}
+
+    </nav>
+</div>

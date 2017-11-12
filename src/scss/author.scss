@@ -1,0 +1,17 @@
+.author-image-wrapper {
+
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display:block;
+
+  .author-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+
+  }
+}

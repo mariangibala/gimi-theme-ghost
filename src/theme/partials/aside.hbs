@@ -1,0 +1,43 @@
+{{!-- aside --}}
+
+<header id="blog-info" class="style-1">
+    <h1 id="blog-title">{{@blog.title}}</h1>
+    <p id="blog-description">{{@blog.description}}</p>
+</header>
+
+{{#if @blog.cover_image}}
+    <img id="blog-cover" src="{{@blog.cover_image}}" alt="{{@blog.title}}"/>
+{{/if}}
+
+<aside id="side-nav" class="panel">
+
+    {{#if showPopularTags}}
+        {{>popularTags}}
+    {{/if}}
+
+    {{#if showRecentPosts}}
+    {{!-- Don't display recent podsts on homepage --}}
+        {{^is "home"}}
+            {{>recentPosts}}
+        {{/is}}
+    {{/if}}
+
+    {{#if @labs.subscribers}}
+        {{>subscribe}}
+    {{/if}}
+
+
+    {{!-- If a static page "aside" exists - content will be loaded here --}}
+
+    {{#get "posts" slug="aside" }}
+        {{#foreach posts}}
+            <div>
+                {{content}}
+            </div>
+        {{/foreach}}
+    {{/get}}
+
+
+</aside>
+
+

@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+
+{{#post}}
+    <article class="panel" role="main">
+
+        {{#if feature_image}}
+            <div class="post-img-wrapper">
+                <img class="post-img" src="{{feature_image}}" alt="{{title}}"/>
+            </div>
+        {{/if}}
+
+        <div class="{{post_class}}" style="max-width: 860px; margin: 0 auto;">
+
+            <h1 class="post-title">{{title}}</h1>
+
+            {{content}}
+
+        </div>
+
+    </article>
+{{/post}}

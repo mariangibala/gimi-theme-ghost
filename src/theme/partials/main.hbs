@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {{!-- Styles'n'Scripts --}}
+    <style>
+        #bg-img {
+            background-image: url({{@blog.cover_image}});
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}"/>
+
+    {{#if childTheme}}
+        {{> (lookup . 'childTheme') }}
+    {{/if}}
+
+    <!-- @if _INCLUDE_EDITOR_ -->
+    <link rel="stylesheet" type="text/css" href="{{asset "editor/css/styles.css"}}"/>
+    <!-- @endif -->
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+
+    {{ghost_head}}
+   <style>
+
+   </style>
+</head>
+
+<body class="{{body_class}}">
+
+<!-- @if _DEBUG_ -->
+<div id="debug">
+    DEBUGGER
+</div>
+<!-- @endif -->
+<!-- @if _INCLUDE_EDITOR_ -->
+<div id="editor-loader"></div>
+<div id="editor-wrapper"></div>
+<!-- @endif -->
+
+<div id="website">
+
+    <div id="bg-wrapper">
+        <div id="bg-img"></div>
+        <div id="bg-gradient"></div>
+        <div id="bg-gradient-top"></div>
+    </div>
+
+    <div id="content-wrapper">
+
+        <div class="container container-fluid">
+
+            <div class="row">
+                <div class="col-xxs-12">
+
+                    <header id="top">
+                        {{#if @blog.logo}}
+                            <a href="{{@blog.url}}" id="blog-logo">
+                                <img id="blog-logo-img" src="{{@blog.logo}}" alt="{{@blog.title}}"/>
+                            </a>
+                        {{/if}}
+
+                        {{navigation}}
+                    </header>
+
+                </div>
+            </div>
+
+        </div>
+
+        {{#is "post, page"}}
+
+        {{#post}}
+            {{#has tag="#wide"}}
+                {{> grids/1column .. }}
+            {{else}}
+                {{> grids/2column  .. }}
+            {{/has}}
+        {{/post}}
+
+        {{else}}
+            {{> grids/2column  }}
+        {{/is}}
+
+
+        {{!-- Footer --}}
+        <footer id="blog-footer" class="container-fluid style-6">
+
+            <div id="go-to-top-icon" class="style-1">
+                <i class="fa fa-chevron-up"></i>
+            </div>
+
+            <div class="container ">
+                <div class="row">
+                    <div class="col-xxs-12">
+                        {{> social}}
+                        <div id="copyright">
+                            <a href="{{@blog.url}}">{{@blog.title}}</a>
+                            &copy; {{date format="YYYY"}} {{txt_footerText}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        {{!-- Footer End --}}
+
+    </div>
+
+    <div id="top-line"></div>
+
+    {{!-- MS Edge creates sometimes 1px space below footer due to incorrect subpixel calculations.
+     This element fixes it. --}}
+    <div id="edge-footer-fix" class="style-6"></div>
+
+</div>
+
+<!-- @if _INCLUDE_EDITOR_ -->
+<script type="text/javascript" src="{{asset "editor/js/App.js"}}"></script>
+<!-- @endif -->
+
+{{!-- Theme JS includes jQuery so it can can be used in footer code injection --}}
+<script type="text/javascript" src="{{asset "js/theme.js"}}"></script>
+
+{{!-- Ghost outputs important scripts and data with this tag --}}
+{{ghost_foot}}
+
+</body>
+</html>

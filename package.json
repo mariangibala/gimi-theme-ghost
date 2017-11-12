@@ -1,0 +1,48 @@
+{
+  "name": "gimi-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env BUILD_TYPE=dev gulp dev",
+    "dev:include-editor": "cross-env _INCLUDE_EDITOR_=true BUILD_TYPE=dev gulp dev",
+    "production:include-editor": "cross-env _INCLUDE_EDITOR_=true gulp production",
+    "production:sell": "cross-env BUILD_TYPE=sell gulp production",
+    "production:demo": "cross-env BUILD_TYPE=demo gulp production",
+    "publish:docs": "gulp publish:docs",
+    "dev:docs": "gulp dev:docs"
+  },
+  "dependencies": {
+    "babel-plugin-transform-runtime": "6.9.0",
+    "babel-runtime": "6.9.1",
+    "cheerio": "^1.0.0-rc.2",
+    "cross-env": "2.0.0",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.3.2",
+    "gulp-clean-css": "2.0.13",
+    "gulp-insert": "0.5.0",
+    "gulp-plumber": "1.1.0",
+    "gulp-preprocess": "2.0.0",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-uglify": "1.5.1",
+    "gulp-watch": "4.3.8",
+    "i18n-webpack-plugin": "0.3.0",
+    "jquery": "3.2.0",
+    "js-beautify": "^1.6.14",
+    "minimist": "1.2.0",
+    "run-sequence": "1.1.5",
+    "watchify": "3.7.0",
+    "webpack-stream": "3.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.11.4",
+    "babel-core": "6.10.4",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.11.1",
+    "gulp-sass": "2.1.1",
+    "webpack": "1.13.1"
+  },
+  "author": "Marian Gibala",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{{!-- renders popular tags --}}
+
+<h3>{{txt_popularTags}}</h3>
+
+<div class="post-tags">
+    {{#get "tags" limit="20" include="count.posts" order="count.posts desc"}}
+        {{#foreach tags}}
+            <a class="style-2" href="/tag/{{slug}}">{{name}}</a>
+        {{/foreach}}
+    {{/get}}
+</div>

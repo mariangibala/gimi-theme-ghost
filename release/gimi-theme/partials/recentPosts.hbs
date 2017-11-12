@@ -1,0 +1,11 @@
+{{!-- renders recent posts --}}
+
+<h3>{{txt_recentPosts}}</h3>
+
+<div>
+    {{#get "posts" limit="5" order="published_at desc"}}
+        {{#foreach posts}}
+            <a class="recent-post" href={{url}}>{{title}}</a>
+        {{/foreach}}
+    {{/get}}
+</div>

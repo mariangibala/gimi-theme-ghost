@@ -1,0 +1,30 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- The main content area on the homepage --}}
+<article class="panel" role="main">
+
+    {{#tag}}
+        <div>
+
+            {{#if feature_image}}
+                <div class="post-img-wrapper">
+                    <img class="post-img" src="{{feature_image}}" alt="{{title}}"/>
+                </div>
+            {{/if}}
+
+            <h1><span><i class="fa fa-tag margin-right"></i></span>{{name}}</h1>
+
+            <h4>{{plural ../pagination.total empty='0 POSTS' singular='% POST' plural='% POSTS'}}</h4>
+
+            {{#if description}}
+                <p>{{description}}</p>
+            {{/if}}
+
+        </div>
+    {{/tag}}
+
+</article>
+
+{{!-- The tag below includes the post loop - partials/loop.hbs --}}
+{{> loop twoColumns=true}}

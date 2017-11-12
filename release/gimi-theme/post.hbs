@@ -1,0 +1,20 @@
+{{!< default}}
+
+{{!-- The comment above "< default" means - insert everything in this file into
+    the {{{body}}} of the default.hbs template, containing the blog header/footer. --}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+{{!-- Load partials/post with this settings--}}
+    {{> post
+            showAuthor=true
+            showDate=true
+            showSocialMediaShareIcons=true
+
+            disqus=false
+
+            txt_shareThisPost="Share this post"
+
+    }}
+{{/post}}

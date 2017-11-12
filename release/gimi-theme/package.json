@@ -1,0 +1,13 @@
+{
+  "name": "gimi-theme",
+  "version": "3.0.3",
+  "description": "Ghost Theme",
+  "config": {
+    "posts_per_page": 5
+  },
+  "author": {
+    "name": "ThemesGhost.com",
+    "email": "themesghostcom@gmail.com",
+    "url": "http://themesghost.com"
+  }
+}

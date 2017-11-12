@@ -1,0 +1,36 @@
+{{!-- each post in "loop" renders with this markup --}}
+
+<article class="panel {{post_class}}">
+
+    {{#if feature_image}}
+        <a href="{{url}}">
+            <div class="post-img-wrapper">
+                <img class="post-img" src="{{feature_image}}" alt="{{title}}"/>
+                <div class="post-img-fog"></div>
+                <div class="post-read-more style-1">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+        </a>
+    {{/if}}
+
+    {{#if featured}}
+        <div class="post-featured">
+            <i class="fa fa-featured style-7"></i>
+        </div>
+    {{/if}}
+
+    {{#if tags}}
+        <div class="post-tags">
+            {{#foreach tags}}
+                <a href="{{url}}" title="{{name}}" class="style-2">{{name}}</a>
+
+            {{/foreach}}
+        </div>
+    {{/if}}
+
+    <h2 class="post-title"><a href="{{url}}">{{title}}</a></h2>
+
+    <p>{{excerpt words="36"}} <a class="read-more" href="{{url}}">More &raquo;</a></p>
+
+</article>

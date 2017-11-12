@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>GIMI Theme - Documentation</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+
+
+</head>
+
+<body>
+
+
+<div id="website">
+    <img src="./img/main.jpg">
+    <h1>GIMI Theme Documentation</h1>
+
+
+    <span class="tag">Theme version: 3.0.0</span>
+    <span class="tag">Supported Ghost version: v1.X.X</span>
+    <span class="tag">Updated: 13 August 2017</span>
+
+
+    <hr>
+
+    <div id="content-list">
+        <h2>List of content</h2>
+
+    </div>
+
+    <hr>
+
+    <h3>Structure of included files in the package</h3>
+
+
+    <div class="option-box">
+        <p class="option bold">gimi-theme folder</p>
+        <p class="value">Contains theme main files</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option bold">demo-child-themes folder</p>
+        <p class="value">Contains child themes</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option bold">documentation folder</p>
+        <p class="value">Contains documentation </p>
+    </div>
+
+    <hr>
+
+
+    <h3>Theme installation</h3>
+
+    <p>
+        To install this theme you must have a working version
+        of Ghost 1.X.X already installed. For information on
+        installing the Ghost platform, please see the
+        <a href="https://docs.ghost.org/v1.0.0/docs">Ghost v1.0.0 documentation</a>.
+    </p>
+
+    <p>
+        First of all, you must create a .zip archive that contains theme files. Modify theme options if you need to
+        (see details below),
+        then select all files in gimi-theme folder and create .zip archive.
+    </p>
+
+    <ul>
+        <li>In your Ghost admin panel navigate to <span class="highlight">Design</span> tab</li>
+        <li>Click <span class="highlight">UPLOAD A THEME</span> button and upload created .zip file</li>
+
+
+    </ul>
+
+    <img src="./img/ghost-1-upload-theme.png">
+
+    <ul>
+        <li>Once the file has uploaded, click <span class="highlight">ACTIVATE NOW</span></li>
+    </ul>
+
+    <img src="./img/ghost-1-activate-theme.png">
+
+
+    <ul>
+        <li>Go to <span class="highlight">Code Injection</span> tab</li>
+        <li>Paste a child theme configuration</li>
+        <li>Click <span class="highlight">SAVE</span></li>
+    </ul>
+
+    <img src="./img/ghost-1-inject-code.png">
+
+    <ul>
+        <li>Go to <span class="highlight">Labs</span> tab</li>
+        <li>Enable <span class="highlight">Public API</span> feature and optionally
+            <span class="highlight">Subscribers</span></li>
+    </ul>
+
+    <img src="./img/ghost-1-labs.png">
+
+    <ul>
+        <li>That's it! If something is still not clear, have a look on the installation process video:
+            <a href="https://www.youtube.com/watch?v=9JIyN5OI3no">https://www.youtube.com/watch?v=9JIyN5OI3no</a>
+        </li>
+    </ul>
+
+    <hr>
+
+
+    <h3>What is a child theme?</h3>
+
+    <p>We have separated some code from the core theme structure to make GIMI customizations easy and simple -
+        we call it a "child theme". Child theme contains some configuration details about colors,
+        fonts and style. GIMI requires that data to render your website correctly, so please don't forget to include it!
+    </p>
+
+    <hr>
+
+    <h3>
+        How to activate a child theme?
+    </h3>
+    <p>
+        You can inject a child theme code into your blog header by using admin panel (see theme installation).
+        Alternatively,
+        if you want to keep admin panel "clean", you can edit <span class="bold">partials/child-themes/theme.hbs</span>
+        file.
+    </p>
+
+    <hr>
+
+    <h3>How to get a child theme code?</h3>
+
+    <p>
+        We have included 10 child themes in your package.
+        You can find them in <span class="bold">demo-child-themes</span> folder.
+    </p>
+
+    <img src="./img/child-themes.png">
+
+    <p>
+        A child theme code is located in <span class="bold">theme.hbs</span> file.
+    </p>
+
+    <p class="bold">You can use online editor
+        <a href="http://gimi-editor.themesghost.com" target="_blank">http://gimi-editor.themesghost.com</a>
+        to generate your own child theme.</p>
+
+
+    <video src="./img/editor.mp4" autoplay loop>
+        Sorry, your browser doesn't support embedded videos
+    </video>
+
+    <hr>
+
+    <h3>How to download a child theme code from the editor?</h3>
+
+    <p>Click on <span class="highlight">Get CSS</span> button and copy the code.</p>
+
+    <img src="./img/get-css.png">
+
+    <hr>
+
+    <h3>How to use Disqus comments?</h3>
+
+    <p>Fill in your Disqus id in <span class="bold">post.hbs</span> file to activate disqus powered comments.</p>
+
+    <img src="./img/disqus.png">
+
+    <hr>
+
+    <h3>Post options</h3>
+
+    <p>You can change some post functionality in <span class="bold">post.hbs</span> file.</p>
+
+
+    <div class="option-box bold">
+        <p class="option">Option</p>
+        <p class="value">Acceptable value</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option">showAuthor</p>
+        <p class="value">boolean: true, false</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option">showDate</p>
+        <p class="value">boolean: true, false</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option">showSocialMediaShareIcons</p>
+        <p class="value">boolean: true, false</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option">disqus</p>
+        <p class="value">boolean: false or string: Disqus id</p>
+    </div>
+
+
+    <hr>
+
+    <h3>Theme options</h3>
+
+    <p>You can change some blog functionality in <span class="bold">default.hbs</span> file.</p>
+
+
+    <div class="option-box bold">
+        <p class="option">Option</p>
+        <p class="value">Acceptable value</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option">showPopularTags</p>
+        <p class="value">boolean: true, false</p>
+    </div>
+
+    <div class="option-box">
+        <p class="option">showRecentPosts</p>
+        <p class="value">boolean: true, false</p>
+    </div>
+
+
+    <hr>
+
+    <h3>Blog logo</h3>
+
+    <p>We strongly recommend to use SVG file format for your logo.</p>
+
+    <hr>
+
+
+    <h3>Font Awesome icons</h3>
+
+    <img src="./img/icons.png">
+
+    <p>GIMI theme comes with Font Awesome 4.7.0 icons collection. Use the following code to include icon in your
+        content:</p>
+
+    <code>
+        &lt;i class="fa fa-thumbs-up fa-lg" aria-hidden="true"&gt;&lt;/i&gt;
+    </code>
+
+
+    <p><span class="bold">fa-thumbs-up</span> is the icon name.
+        You can find the list of available icons on
+        <a href="http://fontawesome.io/icons/" target="_blank">http://fontawesome.io/icons/</a>
+    </p>
+
+    <p>Please note, icons are custom elements defined by styles, so they are not visible in Ghost preview editor. </p>
+
+    <hr>
+
+    <h3>Social media icons</h3>
+
+    <p>Twitter and Facebook icons are automatically enabled,
+        if you fill in social profiles in Ghost admin panel (Settings -> General).</p>
+
+    <img src="./img/facebook-twitter.png">
+
+    <p>To add or remove any other icons (Font Awesome) edit <span class="bold">partials/social.hbs</span> file.</p>
+
+    <img src="./img/social.png">
+
+    <hr>
+
+
+    <h3>Loop placeholder</h3>
+
+    <p>You can paste custom HTML/CSS into <span class="bold">/partials/loopPlaceholder.hbs</span>
+        file which will be displayed after first two posts.
+        By default loop placeholder is not active and you have to change
+        <span class="bold">showLoopPlaceholder</span> option to true in index.hbs.</p>
+
+    <img src="./img/loop-placeholder.png">
+
+
+
+    <hr>
+
+    <h3>How to create a wide page?</h3>
+
+    <p>Create internal tag <span class="bold">#wide</span> and add it to a page.</p>
+
+    <img src="./img/tag-wide.png">
+
+
+    <hr>
+
+    <h3>How to add a custom content to aside?</h3>
+
+    <p>Create static page with slug "aside". Its content will be loaded to aside. </p>
+
+    <img src="./img/aside.png">
+
+
+    <hr>
+
+
+
+
+    <h3>Support</h3>
+
+    <p>If you have any questions that are beyond the scope of this documentation,
+        please do not hesitate to contact us at <span class="bold">themesghostcom@gmail.com</span>.</p>
+
+    <hr>
+
+
+    <h3>3rd party assets</h3>
+
+    <h4>Fonts</h4>
+    <ul>
+        <li><a href="http://fontawesome.io">Font Awesome Font Awesome 4.7.0</a></li>
+        <li><a href="https://fonts.google.com/">Google Fonts </a></li>
+    </ul>
+
+    <h4>Scripts</h4>
+    <ul>
+        <li><a href="https://jquery.com/">jQuery 3.2.0 </a></li>
+    </ul>
+
+    <h4>Photos</h4>
+
+    <p>Photos used in theme previews and the editor are licensed under
+        <a href="https://creativecommons.org/publicdomain/zero/1.0/">
+            Creative Commons Zero</a>.</p>
+
+    <p>Thank you to all authors for that beautiful piece of work.</p>
+
+    <p class="credits">
+        <a href="https://unsplash.com/@shmoopoo">Sophie Higginbottom</a>
+        <a href="https://unsplash.com/@leeroyagency">Leeroyagency</a>
+        <a href="https://unsplash.com/@alvaroserrano">Alvaro Serrano</a>
+        <a href="https://unsplash.com/@kevinjyoung">Kevin Young</a>
+        <a href="https://unsplash.com/@lucabravo">Luca Bravo</a>
+        <a href="https://unsplash.com/@matthewhenry">Matthew Henry</a>
+        <a href="https://unsplash.com/@timtrad">Tim trad</a>
+        <a href="https://unsplash.com/@fluffpiece">Vinh Pham</a>
+        <a href="https://unsplash.com/@albertorestifo">Alberto Restifo</a>
+        <a href="https://unsplash.com/@ajshotz">Alex Jodoin</a>
+        <a href="https://unsplash.com/@brookecagle">Brooke Cagle</a>
+        <a href="https://unsplash.com/@dustinlee">Dustin Lee</a>
+        <a href="https://unsplash.com/@skamenar">Steven Kamenar</a>
+        <a href="https://unsplash.com/@romankraft">Roman Kraft</a>
+        <a href="https://unsplash.com/@artemkovalev">Artem Kovalev</a>
+        <a href="https://unsplash.com/@benwhitephotography">Ben White</a>
+        <a href="https://unsplash.com/@lee_hisu">Hisu Lee</a>
+        <a href="https://unsplash.com/@dariuszsankowski">Dariusz Sankowski</a>
+        <a href="https://unsplash.com/@andersjilden">Anders Jilden</a>
+        <a href="https://unsplash.com/@imthebear">Thomas Lefebvre</a>
+        <a href="https://unsplash.com/@omgitsmattyvee">Matty Adame</a>
+        <a href="https://pixabay.com/en/users/Daria-Yakovleva-3938704/">Daria Yakovleva</a>
+        <a href="https://unsplash.com/@brookelark">Brooke Lark</a>
+    </p>
+
+    <p>Vectors are
+        <a href="http://www.freepik.com"> created by Freepik</a></p>
+
+    <p>Photos and vectors are not included in the theme package.</p>
+
+    <hr>
+
+    <h3>Changelog</h3>
+
+    <h4>3.0.0 - 13 August 2017</h4>
+
+    <p>- Stop developing version for Ghost v0.11.X.</p>
+    <p>- Remove recent posts from homepage because it's the same as the posts loop there</p>
+    <p>- Editor: add options: aside position (left/right), top gradient size, top line (on/off)</p>
+    <p>- Editor: add possibility to use a custom cover IMG URL</p>
+    <p>- Update default blog layout to 3 columns</p>
+    <p>- Add #wide page </p>
+    <p>- Add loop placeholder</p>
+    <p>- Implement loading content to aside from static page</p>
+    <p>- Change structure of files</p>
+
+    <h4>2.0.0 - 2 August 2017</h4>
+
+    <p>- Release Ghost v1.X.X version.</p>
+
+    <h4>1.0.0 - 23 May 2017</h4>
+
+    <p>- Theme release</p>
+
+
+</div>
+
+
+</body>
+</html>

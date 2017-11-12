@@ -1,0 +1,22 @@
+{{!-- This is the main navigation --}}
+
+<div id="nav-mobile-open"><i class="fa fa-bars"></i></div>
+<div id="fog"></div>
+
+<div id="nav-wrapper">
+    <nav id="main-nav">
+
+        <div id="nav-mobile-close"><i class="fa fa-close"></i></div>
+
+        <ul>
+            {{#foreach navigation}}
+                <li class="nav-{{slug}} animated style-3 fa-chevron-right"
+                    role="presentation">
+                    <a href="{{url absolute="true"}}">{{label}}</a>
+                </li>
+            {{/foreach}}
+        </ul>
+
+    </nav>
+</div>
+

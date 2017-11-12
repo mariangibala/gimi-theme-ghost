@@ -1,0 +1,141 @@
+{{!-- renders post --}}
+
+<article class="panel" role="main" >
+
+    {{#if feature_image}}
+        <div class="post-img-wrapper">
+            <img class="post-img" src="{{feature_image}}" alt="{{title}}"/>
+        </div>
+    {{/if}}
+
+    <div class="{{post_class}}" style="max-width: 860px; margin: 0 auto;">
+
+        {{#if featured}}
+            <div class="post-featured">
+                <i class="fa fa-featured style-7"></i>
+            </div>
+        {{/if}}
+
+        {{#if tags}}
+            <div class="post-tags">
+                {{#foreach tags}}
+                    <a href="{{url}}" title="{{name}}" class="style-2">{{name}}</a>
+                {{/foreach}}
+            </div>
+        {{/if}}
+
+
+        <h1 class="post-title">{{title}}</h1>
+
+        {{content}}
+
+        <div class="post-footer">
+
+            {{#if showAuthor}}
+                {{#author}}
+                    <a class="post-author text-muted" href="{{url}}">{{name}}</a>
+                {{/author}}
+            {{/if}}
+
+            {{#if showDate}}
+                <time class="post-date text-muted" datetime="{{date format="YYYY-MM-DD"}}">
+                    {{date format="DD MMMM YYYY"}}
+                </time>
+            {{/if}}
+
+            {{#if showSocialMediaShareIcons}}
+                <div class="post-share">
+                    <h6 class="text-muted text-uppercase">{{txt_shareThisPost}}</h6>
+
+                    <a href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                        <span class="hidden">Twitter</span>
+                        <i class="fa fa-twitter"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <span class="hidden">Facebook</span>
+                        <i class="fa fa-facebook"></i>
+                    </a>
+
+                    <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                        <span class="hidden">Google+</span>
+                        <i class="fa fa-google-plus"></i>
+
+                    </a>
+                </div>
+            {{/if}}
+
+        </div>
+
+        {{#if disqus}}
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = '{{@blog.url}}';
+                    this.page.identifier = '{{comment_id}}';
+                };
+
+                (function () {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://{{disqus}}.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                by Disqus.</a></noscript>
+
+        {{/if}}
+    </div>
+</article>
+
+{{!-- Links to Previous/Next posts --}}
+
+<div class="row">
+
+    {{#prev_post}}
+        <div class="col-md-6">
+            <a href="{{url}}">
+                <article class="panel small style-4">
+
+                    {{#if feature_image}}
+                        <div class="post-img-wrapper">
+                            <img class="post-img" src="{{feature_image}}" alt="{{title}}"/>
+                        </div>
+                    {{/if}}
+
+                    <h4>{{title}}</h4>
+
+                    <span class="post-related previous-story style-4-child">previous story</span>
+
+                    <p>{{excerpt words="19"}}&hellip;</p>
+                </article>
+            </a>
+        </div>
+    {{/prev_post}}
+
+    {{#next_post}}
+        <div class="col-md-6">
+            <a href="{{url}}">
+                <article class="panel small style-4">
+
+                    {{#if feature_image}}
+                        <div class="post-img-wrapper">
+                            <img class="post-img" src="{{feature_image}}" alt="{{title}}"/>
+                        </div>
+                    {{/if}}
+
+                    <h4>{{title}}</h4>
+
+                    <span class="post-related next-story style-4-child">next story</span>
+
+                    <p>{{excerpt words="19"}}&hellip;</p>
+                </article>
+            </a>
+        </div>
+    {{/next_post}}
+
+</div>

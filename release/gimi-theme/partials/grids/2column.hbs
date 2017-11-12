@@ -1,0 +1,19 @@
+{{!-- 2 column grid -> content and aside --}}
+
+<div class="container flex">
+    <div id="layout-wrapper" class="row">
+
+        <div class="col-xxs-12 col-md-7 col-lg-8">
+
+            {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+            {{{body}}}
+
+        </div>
+
+        <section class="col-xxs-12 col-md-5 col-lg-4">
+            {{> aside}}
+        </section>
+
+
+    </div>
+</div>

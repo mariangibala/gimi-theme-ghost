@@ -1,0 +1,33 @@
+{{!-- posts loop --}}
+
+<main id="content" class="content">
+    <div class="row" style="display:flex; flex-wrap: wrap;">
+
+        {{#foreach posts from="0" to="2"}}
+            <div class="col-xxs-12 {{#if ../twoColumns}}col-lg-6{{/if}}">
+                {{> loopPost }}
+            </div>
+        {{/foreach}}
+
+        {{#if showLoopPlaceholder}}
+            <div class="col-xxs-12">
+                {{>loopPlaceholder}}
+            </div>
+        {{/if}}
+
+        {{#foreach posts from="3" to="{{@config.posts_per_page}}" }}
+
+        {{!-- Sorry for that long line, trying to avoid rendering /n  --}}
+        {{!-- For the last post in two columns layout, if there is no second post -> use full width --}}
+            <div class="col-xxs-12 {{#if ../twoColumns}}{{#if @last}}{{#if @even}}col-lg-6{{/if}}{{else}}col-lg-6{{/if}}{{/if}}">
+                {{> loopPost }}
+            </div>
+
+        {{/foreach}}
+
+
+        {{!-- Previous/next page links --}}
+        {{pagination}}
+
+    </div>
+</main>
