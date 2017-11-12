@@ -4,7 +4,7 @@
 # Gimi Theme
 
 **If you want to just use the theme - grab files from the release folder
-and proceed with the documentation: https://mariangibala.github.io/gimi-theme-ghost/**
+and proceed with the [documentation](https://mariangibala.github.io/gimi-theme-ghost/).**
 
 Clean and customizable blog theme for Ghost v1.X.X
 
