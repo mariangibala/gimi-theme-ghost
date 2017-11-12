@@ -56,3 +56,7 @@ npm run dev:include-editor -d "buildDestinationPath"
 ## Included child themes:
 
 ![Child Themes](/docs/img/child-themes.png?raw=true)
+
+## License
+
+MIT
