@@ -117,6 +117,8 @@
 
     </div>
 
+    {{!-- Its actually TOP element but MS Edge doesn't like fixed elements and
+    renders "jumpy background" when it's there ;/ --}}
     <div id="top-line"></div>
 
     {{!-- MS Edge creates sometimes 1px space below footer due to incorrect subpixel calculations.
@@ -129,7 +131,7 @@
 <script type="text/javascript" src="{{asset "editor/js/App.js"}}"></script>
 <!-- @endif -->
 
-{{!-- Theme JS includes jQuery so it can can be used in footer code injection --}}
+{{!-- Theme code and jQuery ($ can can be used in Ghost "footer code injection") --}}
 <script type="text/javascript" src="{{asset "js/theme.js"}}"></script>
 
 {{!-- Ghost outputs important scripts and data with this tag --}}

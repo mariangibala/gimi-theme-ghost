@@ -1,0 +1,24 @@
+#pagination-wrapper {
+  margin: 20px 15px 20px 15px;
+  line-height: 30px;
+  position: relative;
+  overflow: hidden;
+  border: none !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  #pagination {
+    text-transform: uppercase;
+
+    #page-number {
+      margin: 0 15px;
+      text-align: center;
+      padding: 5px;
+    }
+
+    .btn-pagination {
+      transition: background-color 300ms;
+    }
+  }
+}

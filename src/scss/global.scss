@@ -103,153 +103,19 @@ p {
   flex: 1 1 auto;
 }
 
-#bg-gradient-top {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  min-height: 300px;
-  opacity: 1;
-}
 
 #blog-logo {
   margin: 0 20px 20px 0;
+
+  @media (max-width: $screen-xs-max) {
+    margin: 0 auto 20px auto;
+  }
 }
 
 #blog-logo-img {
   width: 100px;
 }
 
-@media (max-width: $screen-xs-max) {
-  #blog-logo {
-    margin: 0 auto 20px auto;
-  }
-}
-
-#nav-mobile-open {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  display: none;
-
-  @media (max-width: $screen-xs-max) {
-    display: block;
-  }
-
-}
-
-#nav-wrapper {
-  @media (max-width: $screen-xs-max) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50%;
-    min-width: 250px;
-    max-width: 100%;
-    height: 100vh;
-    transition: opacity 500ms ease, transform 500ms ease;
-    transform: translateX(30px);
-    opacity: 0;
-    visibility: hidden;
-
-    &.visible {
-      transform: translateX(0px);
-      visibility: visible;
-      opacity: 1;
-    }
-
-  }
-
-  z-index: 2200;
-  display: inline-block;
-  position: relative;
-
-  &.visible {
-    display: inline-block;
-  }
-
-}
-
-#fog {
-  @media (max-width: $screen-xs-max) {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    visibility: hidden;
-    z-index: 400;
-    opacity: 0;
-    transition: opacity 500ms ease;
-  }
-
-  &.visible {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-#main-nav {
-  @media (max-width: $screen-xs-max) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 2200;
-    padding-top: 60px;
-  }
-
-  #nav-mobile-close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    display: none;
-
-    @media (max-width: $screen-xs-max) {
-      display: block;
-    }
-  }
-
-  display: inline-block;
-
-  ul {
-    padding: 0;
-    z-index: 2;
-  }
-
-  @media (max-width: $screen-xs-max) {
-    li {
-      display: block;
-      margin: 5px 20px;
-    }
-  }
-
-  @media (min-width: $screen-sm-min) {
-    li {
-      display: inline-block;
-      margin-right: 14px;
-    }
-  }
-
-  li {
-    &:first-of-type {
-    }
-
-    a {
-      padding: 8px 18px;
-      z-index: 2;
-      position: relative;
-    }
-
-    &:hover {
-    }
-  }
-}
 
 #blog-cover {
   width: 100%;
@@ -278,13 +144,6 @@ p {
   font-size: 18px;
 }
 
-#top-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 100%;
-}
 
 #top {
   border-bottom: 1px dashed $topBottomBorderColor;
@@ -293,229 +152,6 @@ p {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
-
-#bg-gradient {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-}
-
-#bg-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#bg-img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-attachment: fixed;
-
-  @media (max-width: $screen-xs-max) {
-    background-attachment: scroll; // ios bg scaling fix
-  }
-}
-
-#blog-footer {
-  padding: 20px 0 20px;
-  margin-top: 30px;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  font-size: 11px;
-
-  #copyright {
-    margin: 15px 0 0 0;
-  }
-
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.post {
-
-  .fa {
-    margin: 0 5px;
-  }
-
-  .read-more {
-  }
-
-  .post-share {
-
-    font-size: 24px;
-
-    > a {
-      text-align: center;
-      padding: 5px;
-      opacity: 0.5;
-      transition: opacity 0.3s;
-      margin: 0 5px 0 0;
-      display: inline-block;
-      color: $text-color;
-
-      &:hover {
-        opacity: 1;
-        color: $text-color;
-      }
-
-    }
-  }
-}
-
-.post-img {
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
-}
-
-.post-img-fog {
-  opacity: 0;
-  transition: opacity .4s ease;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-}
-
-.post-img-wrapper {
-  position: relative;
-  margin: -10px -10px 0 -10px;
-  font-size: 16px; // for hover icon (line height changes otherwise)
-
-  .post-read-more {
-    border-radius: $border-radius-elements;
-    position: absolute;
-    right: 30px;
-    bottom: -15px;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    opacity: 0;
-    transition: transform 400ms ease, opacity 0.4s ease;
-    transform: translateX(0);
-    z-index: 2100;
-
-    > .fa {
-      font-size: 20px;
-      top: 7px;
-      left: 1px;
-      position: relative;
-      margin: 0;
-    }
-
-  }
-
-  &:hover {
-    .post-read-more {
-      opacity: 1;
-      transform: translateX(10px);
-    }
-
-    .post-img-fog {
-      opacity: 0.1;
-    }
-
-  }
-
-}
-
-#content, .content {
-
-}
-
-.post-title {
-  margin: 30px 0 25px 0;
-}
-
-.panel.small {
-  padding: $panel-padding-small $panel-padding-small 30px $panel-padding-small;
-  font-size: 85%;
-
-  .post-img-wrapper {
-    margin: -10px -10px 0 -10px;
-  }
-
-}
-
-.post-panel, .panel {
-  padding: $panel-padding $panel-padding 40px $panel-padding;
-  margin-bottom: 20px;
-  position: relative;
-
-  img {
-    max-width: 100%;
-  }
-
-}
-
-.post-footer {
-  margin-top: 30px;
-}
-
-.post-tags {
-  margin: 20px 0;
-
-  a {
-    padding: 3px 13px;
-    margin: 0 8px 5px 0;
-    border-radius: $border-radius-large;
-    display: inline-block;
-    transition: box-shadow 300ms ease, background-color 300ms ease, color 300ms ease;
-
-    &:hover {
-      @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
-
-    }
-
-  }
-}
-
-.post-featured {
-  border-radius: 0;
-  width: $featured-size;
-  height: $featured-size;
-  border-bottom: solid $featured-size / 2 transparent;
-  border-right: solid $featured-size / 2 rgba(255, 255, 255, 0);
-  border-left: solid $featured-size / 2 $panel-bg;
-  border-top: solid $featured-size / 2 $panel-bg;
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 18px;
-  z-index: 100;
-
-  .fa {
-    position: absolute;
-    top: -$featured-size / 2 + 8;
-    left: -$featured-size / 2 + 3;
-  }
-}
-
-.post-date {
-}
-
-.post-author {
-  margin-right: 20px;
 }
 
 .animated {
@@ -549,92 +185,8 @@ p {
   left: 0;
 }
 
-#go-to-top-icon {
-  border-radius: $border-radius-elements;
-  position: absolute;
-  top: -20px;
-  right: 30px;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  font-size: 16px;
-  z-index: 2100;
-  cursor: pointer;
-
-  .fa {
-    top: 4px;
-    position: relative;
-  }
-
-  transition: transform 300ms ease, box-shadow 300ms ease, opacity 300ms ease-in;
-  transform: scale(1, 1);
-
-  &:hover {
-    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
-    transform: scale(1.1, 1.1);
-
-  }
-
-}
-
-#social-icons {
-  font-size: 20px;
-  cursor: default;
-
-  a {
-    opacity: 0.5;
-    transition: opacity 0.3s;
-    margin: 0 10px 0 0;
-
-    &:hover {
-      opacity: 1;
-    }
-
-  }
-
-}
-
 .margin-right {
   margin-right: 10px;
-}
-
-.post-share {
-  margin-top: 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1)
-}
-
-.author-meta-info {
-  margin-right: 15px;
-  font-size: 85%;
-  display: inline-block;
-  .fa {
-    margin-right: 3px;
-  }
-}
-
-#pagination-wrapper {
-  margin: 20px 15px 20px 15px;
-  line-height: 30px;
-  position: relative;
-  overflow: hidden;
-  border: none !important;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  #pagination {
-    text-transform: uppercase;
-
-    #page-number {
-      margin: 0 15px;
-      text-align: center;
-      padding: 5px;
-    }
-
-    .btn-pagination {
-      transition: background-color 300ms;
-    }
-  }
 }
 
 .btn-icon {
@@ -646,22 +198,6 @@ p {
   flex: 1;
 }
 
-.post-related {
-  position: absolute;
-  bottom: 0;
-  padding: 3px 20px;
-  text-transform: uppercase;
-  transition: background-color 300ms;
-
-  &.previous-story {
-    left: 0;
-  }
-
-  &.next-story {
-    right: 0;
-  }
-
-}
 
 blockquote {
   background-color: rgba(0, 0, 0, 0.04);
@@ -690,43 +226,6 @@ iframe {
   display: block
 }
 
-.recent-post {
-  display: block;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  padding: 8px 10px;
-  margin: 0;
-  font-weight: 700;
-  transition: background-color 300ms;
-  background-color: rgba(0, 0, 0, 0);
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
-}
-
-.post-footer a.text-muted {
-  color: $text-light;
-  &:hover {
-    color: $text-light;
-    text-decoration: underline;
-  }
-}
-
-#edge-footer-fix {
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-}
-
-form button {
-  transition: background-color 300ms;
-}
-
-.fa-featured:before {
-  content: "\f005";
-}
 
 #layout-wrapper {
   display: flex;

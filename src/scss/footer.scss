@@ -1,0 +1,72 @@
+#blog-footer {
+  padding: 20px 0 20px;
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+
+  #copyright {
+    margin: 15px 0 0 0;
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+#go-to-top-icon {
+  border-radius: $border-radius-elements;
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  z-index: 2100;
+  cursor: pointer;
+
+  .fa {
+    top: 4px;
+    position: relative;
+  }
+
+  transition: transform 300ms ease, box-shadow 300ms ease, opacity 300ms ease-in;
+  transform: scale(1, 1);
+
+  &:hover {
+    @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+    transform: scale(1.1, 1.1);
+
+  }
+}
+
+#social-icons {
+  font-size: 20px;
+  cursor: default;
+
+  a {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    margin: 0 10px 0 0;
+
+    &:hover {
+      opacity: 1;
+    }
+
+  }
+}
+
+/*
+ MS Edge creates sometimes 1px space below footer due to incorrect subpixel calculations.
+ This element fixes it.
+*/
+#edge-footer-fix {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
