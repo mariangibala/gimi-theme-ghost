@@ -18,7 +18,7 @@
         {{#foreach posts from="3" to="{{@config.posts_per_page}}" }}
 
         {{!-- Sorry for that long line, trying to avoid rendering /n  --}}
-        {{!-- For the last post in two columns layout, if there is no second post -> use full width --}}
+        {{!-- For a two column layout, if there is no second post at the last row -> use full width for the last post --}}
             <div class="col-xxs-12 {{#if ../twoColumns}}{{#if @last}}{{#if @even}}col-lg-6{{/if}}{{else}}col-lg-6{{/if}}{{/if}}">
                 {{> loopPost }}
             </div>
@@ -28,6 +28,6 @@
 
         {{!-- Previous/next page links --}}
         {{pagination}}
-
+        
     </div>
 </main>
